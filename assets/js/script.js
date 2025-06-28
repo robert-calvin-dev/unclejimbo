@@ -95,7 +95,46 @@ document.querySelectorAll('.vinyl-img').forEach(vinyl => {
     e.dataTransfer.setData('imageSrc', vinyl.src);
     e.dataTransfer.setData('trackTitle', vinyl.dataset.track);
     e.dataTransfer.setData('audioSrc', vinyl.dataset.audio);
+  })
+  document.querySelectorAll('.vinyl-img').forEach(vinyl => {
+  // Existing dragstart listener...
+  vinyl.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('imageSrc', vinyl.src);
+    e.dataTransfer.setData('trackTitle', vinyl.dataset.track);
+    e.dataTransfer.setData('audioSrc', vinyl.dataset.audio);
   });
+
+  // 🆕 Tap-to-load fallback for mobile
+  vinyl.addEventListener('click', () => {
+    const imageSrc = vinyl.src;
+    const title = vinyl.dataset.track;
+    const audioSrc = vinyl.dataset.audio;
+
+    platter.innerHTML = '';
+    const img = document.createElement('img');
+    img.src = imageSrc;
+    img.alt = title;
+    img.className = 'loaded-vinyl';
+    platter.appendChild(img);
+
+    titleEl.textContent = title;
+
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    currentAudio = new Audio(audioSrc);
+    currentAudio.crossOrigin = "anonymous";
+    currentAudio.loop = true;
+    currentAudio.volume = parseFloat(volumeSlider.value);
+    currentAudio.play();
+    startVisualizer(currentAudio);
+
+    pauseBtn.textContent = '⏸️';
+    waveformBar.style.display = 'block';
+  });
+});;
 });
 
 platter.addEventListener('dragover', e => e.preventDefault());
