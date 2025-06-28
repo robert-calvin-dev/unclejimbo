@@ -134,12 +134,12 @@ background: black;
     margin: 50px 0 50px 0;
   border-radius: 10px;
    background: #000000;
-  border: 1px solid var(--neon-orange);
+  border: 1px solid var(--laser-green);
 }
 
 .vinyl-img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   flex-shrink: 0;
   box-shadow: 0 0 15px var(--neon-blue);
   cursor: grab;
@@ -232,7 +232,7 @@ body[data-intensity="peak"] {
   text-align: center;
   margin: 50px 0 50px 0;
   border-radius: 10px;
-  border: 1px solid var(--neon-orange);
+  border: 1px solid var(--neon-pink);
 }
 
 .bio-wrapper {
@@ -272,7 +272,7 @@ body[data-intensity="peak"] {
   color: white;
     margin: 50px 0 50px 0;
   border-radius: 10px;
-  border: 1px solid var(--neon-orange);
+  border: 1px solid var(--neon-blue);
 }
 
 .blog-posts {
@@ -367,7 +367,7 @@ body[data-intensity="peak"] {
   text-align: center;
     margin: 50px 0 50px 0;
   border-radius: 10px;
-  border: 1px solid var(--neon-orange);
+  border: 1px solid white;
 }
 
 .booking-form {
