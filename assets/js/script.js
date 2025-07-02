@@ -63,7 +63,7 @@ function draw() {
   const icons = document.querySelectorAll('.social-icon');
 
 if (avg > 120) {
-  icons.forEach(icon => icon.style.boxShadow = `0 0 20px var(--neon-pink), 0 0 60px var(--neon-pink)`);
+  icons.forEach(icon => icon.style.boxShadow = `0 0 20px var(--neon-blue), 0 0 60px var(--neon-pink)`);
 } else if (avg > 80) {
   icons.forEach(icon => icon.style.boxShadow = `0 0 12px var(--neon-blue), 0 0 30px var(--neon-blue)`);
 } else {

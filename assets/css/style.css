@@ -31,18 +31,70 @@ background: black;
 .dj-console {
   padding: 2rem 1rem;
   width: 100%;
-  max-width:600px;
+  max-width:800px;
 }
+
+ 
+
+.profile {
+  width: 100%;
+  border-bottom: 1px solid var(--neon-orange);
+ 
+}
+
+    .led-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      background: var(--neon-orange);
+      border: 5px solid var(--neon-orange);
+      padding: 20px;
+      box-shadow: 0 0 20px var(--neon-orange);
+       margin-bottom: 60px;
+    }
+
+    .led-text {
+      display: inline-block;
+      color: rgb(46, 0, 72);
+      font-size: 2rem;
+      letter-spacing: 3px;
+      font-weight:800;
+      animation: scroll-left 12s linear infinite;
+
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .led-text {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .led-text {
+        font-size: 1.2rem;
+      }
+    }
+
 
 .deck {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  
     margin: 50px 0 50px 0;
   border-radius: 10px;
   border: 1px solid var(--neon-orange);
-   background: #111111c5;
+   background: #000000c5;
 }
 
 .platter {
@@ -91,28 +143,29 @@ background: black;
 
 .pause-btn,
 .eject-btn {
-  background: none;
+  background: VAR(--neon-orange);
   border: 2px solid var(--neon-orange);
   color: var(--neon-orange);
   padding: 0.5rem 1rem;
   border-radius: 5px;
   font-size: 1.2rem;
   cursor: pointer;
+  margin: 20px;
 }
 
 .volume-slider {
   flex: 1;
-  accent-color: var(--neon-orange);
+  accent-color: var(--neon-pink);
 }
 
 .waveform-bar {
-  margin-top: 0.75rem;
-  height: 6px;
-  width: 100%;
+  margin: auto;
+  height: 60px;
+  width: 70%;
   background: repeating-linear-gradient(
     90deg,
-    var(--neon-blue),
-    var(--neon-blue) 2px,
+    var(--neon-pink),
+    var(--neon-pink) 2px,
     transparent 2px,
     transparent 4px
   );
@@ -131,17 +184,17 @@ background: black;
   gap: 1rem;
   margin-top: 2rem;
   padding: 1rem;
-    margin: 50px 0 50px 0;
+    margin: 50px 10px 20px 10px;
   border-radius: 10px;
    background: #000000;
-  border: 1px solid var(--laser-green);
+
 }
 
 .vinyl-img {
   width: 150px;
   height: 150px;
   flex-shrink: 0;
-  box-shadow: 0 0 15px var(--neon-blue);
+  box-shadow: 0 0 15px var(--neon-pink);
   cursor: grab;
 }
 
@@ -268,19 +321,22 @@ body[data-intensity="peak"] {
 
 .blog-section {
   padding: 2rem 1rem;
-  background: #111111c5;
+display: flex;
+flex-direction: column;
   color: white;
     margin: 50px 0 50px 0;
   border-radius: 10px;
-  border: 1px solid var(--neon-blue);
+
 }
 
-.blog-posts {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+.blog-section a {
+  margin: auto;
+}
+
+.event {
+  margin: auto;
+  border: 1px solid var(--neon-pink);
+
 }
 
 .blog-card {
@@ -362,16 +418,14 @@ body[data-intensity="peak"] {
 
 .booking-section {
   padding: 2rem 1rem;
-  background: #0d0d0d;
   color: white;
   text-align: center;
     margin: 50px 0 50px 0;
   border-radius: 10px;
-  border: 1px solid white;
 }
 
 .booking-form {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
