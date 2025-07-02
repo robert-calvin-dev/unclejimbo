@@ -336,6 +336,7 @@ flex-direction: column;
 .event {
   margin: auto;
   border: 1px solid var(--neon-pink);
+  width:100%;
 
 }
 
